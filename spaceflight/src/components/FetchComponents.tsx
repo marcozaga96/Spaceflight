@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 interface SingleFlight {
   count: number;
@@ -54,14 +55,16 @@ const FetchComponents = () => {
         {flight && flight.results.map((f) => {
           return (
             <Col xs={12} md={4} lg={3} key={f.id}>
-              <Card style={{ width: "18rem" }}>
+              <Card >
                 <Card.Img variant="top" src={f.image_url} />
                 <Card.Body>
                   <Card.Title>{f.title}</Card.Title>
                   <Card.Text>
                   {f.published_at}
                   </Card.Text>
+                  <Link to={`/details/${f.id}`}>
                   <Button variant="primary">Dettagli</Button>
+                </Link>
                 </Card.Body>
               </Card>
             </Col>

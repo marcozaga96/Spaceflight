@@ -1,4 +1,5 @@
 import { Navbar,Container,Nav } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 function MyNav() {
   return (
@@ -8,8 +9,9 @@ function MyNav() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-
+            <Link to={"/"}>
+            <Nav.Link href="#home" className='text-decoration: none'>Home</Nav.Link>
+            </Link>
             
           </Nav>
         </Navbar.Collapse>
